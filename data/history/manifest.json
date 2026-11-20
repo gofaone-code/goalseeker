@@ -1,0 +1,552 @@
+{
+ "2223/B1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "b6cc9ab7a7300610ef779b95989e9cddac49925e"
+ },
+ "2223/D1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "3692e06c9d92fed535fe6a95cf4e60eda8bda05f"
+ },
+ "2223/D2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "f4d92f8938aa0526fa009125213a4078e5690dbf"
+ },
+ "2223/E0": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "1cb771a1d838013d022d8823d20785287657510f"
+ },
+ "2223/E1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "8979a6263ca41a43deb44433ca81c7c84637c25e"
+ },
+ "2223/E2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "7fde5d6253b7a2c7ed6b6ebb7d4683a4ddc4d904"
+ },
+ "2223/E3": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "1def7096d14166735ba019c9b68a3cb69779928c"
+ },
+ "2223/EC": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "fe5a1cf137e11b96d0196bb3da50d477fa05bc03"
+ },
+ "2223/F1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "2906c5d93b64a0f44c6e10d629d173a6c2270ffa"
+ },
+ "2223/F2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "01ee9fb92edd2d6eae77ce9b5d03feb0d97a839d"
+ },
+ "2223/G1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 240,
+  "sha1": "77f2e286b8262ae30875d1a8d71dd5f99c3e5da2"
+ },
+ "2223/I1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "ce885eacd76a36ebec2ed617667765a5ad6ad37e"
+ },
+ "2223/I2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "7b88951b5e8a0d2a8d8bfcf3fbd617738064d596"
+ },
+ "2223/N1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "4af28e1d5d8e1ee4f357a0be6a4473fafc06c577"
+ },
+ "2223/P1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "1f0de999a1e15cb085ac4971c1eb8035fd89f411"
+ },
+ "2223/SC0": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 228,
+  "sha1": "002e81b834d094dae9a6c8967270028814166844"
+ },
+ "2223/SC1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "10ae0a36e0748aaa9b4228dc53f7398eb37b4dfa"
+ },
+ "2223/SC2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "fd3f3f8062a228459c059b455681e77cdf736e3e"
+ },
+ "2223/SC3": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "9c41aaa1cab684658f9c834b33a6b7934ce55033"
+ },
+ "2223/SP1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "aa0a435d3e40b988a0913fcc42bdd62e314a45f9"
+ },
+ "2223/SP2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 462,
+  "sha1": "35b1d1d859c1c61329558e988fd43d71697faf17"
+ },
+ "2223/T1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 342,
+  "sha1": "92c781c43dd21e3bffc0ff004685409c4453e477"
+ },
+ "2324/B1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 312,
+  "sha1": "d6e0a91fe9fc796eb9d8bcbc35fef7d4d8d5a4b8"
+ },
+ "2324/D1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "49edc9d78c7b8aa63d97580993687fe09871a5f4"
+ },
+ "2324/D2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "3c560f0e2d7aaf00b56dac66d5229b898cfe7eaf"
+ },
+ "2324/E0": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "501bf50fc0c69bad3d3fa4885a299e97a7fee5a7"
+ },
+ "2324/E1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "7c3d0b3e5928a0c1700ff7d9efdb81bf3cdaec49"
+ },
+ "2324/E2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "4332f68ec1066b1e1e71afed8e397888a6356479"
+ },
+ "2324/E3": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "07674baee88e579736adcac249e91a11faf29d1c"
+ },
+ "2324/EC": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "7cf41712ed424e4add58025a4baff5bdf914545d"
+ },
+ "2324/F1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "6ad0867421eb4b4edb1683ff0ad56d26770ab473"
+ },
+ "2324/F2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 379,
+  "sha1": "c0919ae6285ad39e85c76594d6561729b1d67c75"
+ },
+ "2324/G1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 240,
+  "sha1": "1f8f80c2aca3621a7dd846e6b5ff6cf95e6f8ae3"
+ },
+ "2324/I1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "dde75869371a007b3f98ce64177a231587fae468"
+ },
+ "2324/I2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "778a97d9a4552ba646787a3d5ba8cfecbedcff80"
+ },
+ "2324/N1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "91041ee51845da6585e9278afb4a5a00c7c28b65"
+ },
+ "2324/P1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "47f1a4496186531e4fe5f8ae5065ecf407afcb33"
+ },
+ "2324/SC0": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 228,
+  "sha1": "786da9ea634da018a5343f883911b6c1ef269501"
+ },
+ "2324/SC1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "cd25027abc8759e8221130564dcd6d355456fdf6"
+ },
+ "2324/SC2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "ff0ed313c9f138dfd946cb7281b63196fe2169da"
+ },
+ "2324/SC3": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "a051eab1f3f20fd94b5efde553d4aadc1af4859a"
+ },
+ "2324/SP1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "5e6f16c9f3c99b48c31505f779e040b36a5e41d3"
+ },
+ "2324/SP2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 462,
+  "sha1": "1591ad79306bc70874a002c5923376b3359e383f"
+ },
+ "2324/T1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "f9820e779290409dd2008d0ae951b102dc470007"
+ },
+ "2425/B1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 312,
+  "sha1": "3d753dd9de01e080124752d41c889480bb70fd65"
+ },
+ "2425/D1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "3b2d16f95cd6c8f0ae2ce95c48cf8a4233def230"
+ },
+ "2425/D2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "4b4e5f713fe831db83305b101eab44a817cc426f"
+ },
+ "2425/E0": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "7705ccecc29f6de22a19fef50eaa6aab0a72f051"
+ },
+ "2425/E1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "2c972424396ef69c9749626eeb4cec9b6c12e4d4"
+ },
+ "2425/E2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "a5e14cf71268e458b21f980914d5842b19611c12"
+ },
+ "2425/E3": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "eb4bb1e3af93a3ece074281e177ca1d7d5450c22"
+ },
+ "2425/EC": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "dcb4a103bc129fda683c7d2b0ba209cea2a5271e"
+ },
+ "2425/F1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "ac0db0d0b3366ccebce323cc31e1f1dab9e931b7"
+ },
+ "2425/F2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "6586c89b445e2d915fdab36ba3a0c7f669a0d80f"
+ },
+ "2425/G1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 233,
+  "sha1": "22511c17f6e852c4f7f3619e7eceb17ae6fcacbf"
+ },
+ "2425/I1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "5860a5b8c360438f7173bc2d3007099b0c20878c"
+ },
+ "2425/I2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "cd7406f23033ea3e523ee5521378054d59be1db8"
+ },
+ "2425/N1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "f548ff130ac29196cdab309dce2ee86d78e46d80"
+ },
+ "2425/P1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "079e59c48c79a1d55f0e9455aca43fe17e43da53"
+ },
+ "2425/SC0": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 228,
+  "sha1": "218afd6579ab6f7c8fc0c7efc3acae3aecce8313"
+ },
+ "2425/SC1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "1a432e1c9ab70242e4decd1a7d0978438e34fc93"
+ },
+ "2425/SC2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "e1be5de67801cae42ec33602081d2c1e197a73e2"
+ },
+ "2425/SC3": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "b09a06b5a6e40faab7640a2ec09a2573368ab9ae"
+ },
+ "2425/SP1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "cbb60b683b324556a8be438a01a9bfcf4f1c012c"
+ },
+ "2425/SP2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 462,
+  "sha1": "5d35113e43dfbb14bb3cd2d6e24f60168f02ce1d"
+ },
+ "2425/T1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 342,
+  "sha1": "2ee84f94342112d0d3e8fc9e506ff030b4e3fff8"
+ },
+ "2526/B1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 311,
+  "sha1": "a8d064b64091a3bd89d4725907460d0ed6283df3"
+ },
+ "2526/D1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "372939ae16cfc9684da61576d969a72724e5431e"
+ },
+ "2526/D2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "1c7651c89a20da0d32130ffc90b2ad687b92de6f"
+ },
+ "2526/E0": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "8b3576b2a039b76f0aad9fba33389a1cfa0b092f"
+ },
+ "2526/E1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "6d24674f550e9f2cb401c231a840ccbce00d361e"
+ },
+ "2526/E2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "669907a5346d5746dfc461ba408c6b5850d92e75"
+ },
+ "2526/E3": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "90180d596ad79234318b97ff672f99ed20a838e5"
+ },
+ "2526/EC": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 552,
+  "sha1": "8bc9ce207b38b4ab96415b7d225f661fe70d405d"
+ },
+ "2526/F1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "3618de0be84f5196f5be8e89996a48618f7fd0c3"
+ },
+ "2526/F2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "2762157dde6cebb2a5aedf5bc718c3b301c7a95f"
+ },
+ "2526/G1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 236,
+  "sha1": "bfb8f60196da846d8061735a47df62e407feea51"
+ },
+ "2526/I1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "916094ac0800e2b206a33cbb900d8e8984fd56ad"
+ },
+ "2526/I2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "7618e810d67020bda5e4d450b2f5be3fbfbae874"
+ },
+ "2526/N1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "d4f5d3bf0b691340174478470c26095ce26d0739"
+ },
+ "2526/P1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "174c1ede26d2333f7c8966f90ce452cfe2c0a35d"
+ },
+ "2526/SC0": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 228,
+  "sha1": "cdd671a83f8b7c695641515812ea2668f1125a64"
+ },
+ "2526/SC1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "5689fcfa858b1787aeddf05850a0dfed377ce867"
+ },
+ "2526/SC2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "0dbdf9656b1bebe7a0effe5f7033db5a7f2af38e"
+ },
+ "2526/SC3": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "dfa49642b34ebcbf188c623f6ce7776400ce99f3"
+ },
+ "2526/SP1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 380,
+  "sha1": "23fe1c44f8070d13d4415b64628411c63af11a42"
+ },
+ "2526/SP2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 462,
+  "sha1": "672a4394532aaf03158c1eee2b7fd709b7f7ac82"
+ },
+ "2526/T1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 306,
+  "sha1": "59bfb5742635de767ebfa762a5a28e15f2d9ee76"
+ },
+ "2627/B1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 99,
+  "sha1": "5750bc2432f23891a86d7e6a4a317d822eee2225"
+ },
+ "2627/D1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 81,
+  "sha1": "84189cd1dd4a57d6bcc9a8152352d456866e58a1"
+ },
+ "2627/D2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 99,
+  "sha1": "a846b114e4e465a641713f0a5df162c99c0e41e7"
+ },
+ "2627/E0": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 100,
+  "sha1": "4ba31f95796507722634f5140db40c1fb4cf385c"
+ },
+ "2627/E1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 180,
+  "sha1": "5628a628268de5296ef42d7c4229575b8383d9c3"
+ },
+ "2627/E2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 163,
+  "sha1": "2915a238a24284866bb40316c99eb37faef64881"
+ },
+ "2627/E3": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 174,
+  "sha1": "f81a6f6ae2351eda2c40f5b06aef0c4dd6671827"
+ },
+ "2627/EC": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 200,
+  "sha1": "e787b3bc6990f9c4fc553478db93e35b360b7017"
+ },
+ "2627/F1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 90,
+  "sha1": "d71358a1838dbdf39630e190b8a564cb05ee9f9f"
+ },
+ "2627/F2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 108,
+  "sha1": "88452a4fc05c6dc176260aba0e4b4ff14516db61"
+ },
+ "2627/G1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 69,
+  "sha1": "2df954f99d0adc65e6644964d9a8d28dffeadbfc"
+ },
+ "2627/I1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 110,
+  "sha1": "d98ecf68f1b48b50e23362bf8af74da3fe61d7b2"
+ },
+ "2627/I2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 110,
+  "sha1": "45ce0161f006ec5935e64e89bcf03ba8e4a4ea6e"
+ },
+ "2627/N1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 108,
+  "sha1": "f589c92af3bbc4d1008fb978775ed497062e0e44"
+ },
+ "2627/P1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 98,
+  "sha1": "e25f918a238f1e486000e34adf3d2ff447a2c7f4"
+ },
+ "2627/SC0": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 75,
+  "sha1": "f7a58f02bc89a6c5710e4e1c00abf4a326da84e1"
+ },
+ "2627/SC1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 73,
+  "sha1": "bb0b70592e4e9f3915a253a86a11047dfd12aa03"
+ },
+ "2627/SC2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 74,
+  "sha1": "1dd40627d3d22c8fa15969c2a21a138106b47127"
+ },
+ "2627/SC3": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 70,
+  "sha1": "06604cbe7b9e0632a143e1e247550233960d884c"
+ },
+ "2627/SP1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 119,
+  "sha1": "a082a03a375e38ab1907cd1bc18adbbebe43d643"
+ },
+ "2627/SP2": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 151,
+  "sha1": "fb08471dd8a8704bc5b713a51943ab3728f61f4b"
+ },
+ "2627/T1": {
+  "downloaded_at": "2026-11-20T15:56:44Z",
+  "rows": 99,
+  "sha1": "260bf7ab701b5e22a9f063c91fe187ea0689a5a6"
+ }
+}
