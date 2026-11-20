@@ -1,0 +1,73 @@
+name: GoalSeeker
+
+# Runs four times a day (times are UTC). Each run is safe to repeat:
+# sync results + fixtures + prices -> settle finished games -> model -> new picks -> website.
+# The source publishes prices on Tuesday and Friday afternoons (UK), so most runs only
+# settle results and refresh the site.
+on:
+  schedule:
+    - cron: "23 4,10,16,21 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: goalseeker
+  cancel-in-progress: false
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Restore fitted-model cache
+        uses: actions/cache@v5
+        with:
+          path: data/cache
+          key: fits-${{ github.run_id }}
+          restore-keys: fits-
+
+      - name: Run pipeline
+        run: python -m goalseeker run
+
+      - name: Save data to the repository (the audit trail)
+        run: |
+          git config user.name "goalseeker-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- data ':(exclude)data/cache' ':(exclude)data/derived'
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -q -m "data: pipeline run $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull -q --rebase origin "${GITHUB_REF_NAME}"
+            git push -q
+          fi
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+  deploy:
+    needs: pipeline
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
