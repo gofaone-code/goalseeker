@@ -64,8 +64,9 @@ def cmd_backtest(cfg, leagues, now):
 def backtest_stale(cfg, now) -> bool:
     if not cfg.get("backtest", {}).get("enabled"):
         return False
+    from .backtest import VERSION
     bt = store.read_json(store.BACKTEST)
-    return not bt or now - parse_iso(bt["generated_at"]) > timedelta(days=6)
+    return not bt or bt.get("version") != VERSION or now - parse_iso(bt["generated_at"]) > timedelta(days=6)
 
 
 def main(argv=None):

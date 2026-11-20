@@ -17,7 +17,9 @@ import pandas as pd
 
 from . import store
 from .config import iso
-from .edge import confidence_tier, decide, evaluate, selection_label, stake_units
+from .edge import (confidence_tier, decide, devig, effective_odds, evaluate, selection_label,
+                   stake_units)
+from .model import market_key
 from .history import load_results, season_code, seasons_back, shift_season
 from .model import fit_group, predict, seed_for
 from .record import _round, summarize
@@ -35,6 +37,34 @@ def _prices_from_row(raw: dict) -> dict:
     return {k: v for k, v in sets.items() if k[1] in need and need[k[1]] <= set(v)}
 
 
+VERSION = 2   # bump when the backtest output changes, so the next run recomputes it
+
+
+def likely_choice(markets: dict, prices: dict, cfg: dict) -> dict | None:
+    """The 'Most likely' tab's rule: among priced goals (over/under) and result (1X2) bets at a
+    bettable bookmaker, with odds at least min_odds, the one that both the model and the
+    bookmaker rate most likely (highest of min(model, bookmaker fair probability))."""
+    best = None
+    for (bk, mk, ln), sels in prices.items():
+        if bk not in cfg["bettable_bookmakers"] or mk not in ("ou", "1x2"):
+            continue
+        if mk == "ou" and (ln is None or (ln * 2) % 2 != 1):
+            continue
+        fair, _ = devig({s: r["price"] for s, r in sels.items()})
+        for s, r in sels.items():
+            p = markets.get(market_key(mk, ln if mk == "ou" else None, s))
+            if p is None:
+                continue
+            eo = effective_odds(bk, r["price"], cfg["betfair_commission"])
+            if eo < cfg["min_odds"]:
+                continue
+            score = min(p, fair[s])
+            if best is None or score > best["score"]:
+                best = {"market": mk, "line": ln if mk == "ou" else None, "selection": s, "bookmaker": bk,
+                        "price": r["price"], "effective_odds": eo, "p_model": p, "p_fair": fair[s], "score": score}
+    return best
+
+
 def run_backtest(cfg: dict, leagues: list[dict], now) -> dict:
     bt, m = cfg["backtest"], cfg["model"]
     current = season_code(now.date())
@@ -46,7 +76,7 @@ def run_backtest(cfg: dict, leagues: list[dict], now) -> dict:
     active = {lg["code"] for lg in leagues if lg["active"]}
     groups = sorted({lg["group"] for lg in leagues if lg["active"]})
     lg_by = {lg["code"]: lg for lg in leagues}
-    recs, calib = [], []
+    recs, calib, likely = [], [], []
     counts = defaultdict(int)
     for group in groups:
         divs = [lg["code"] for lg in leagues if lg["group"] == group]
@@ -82,6 +112,11 @@ def run_backtest(cfg: dict, leagues: list[dict], now) -> dict:
                         io, iu = 1 / s["over"]["price"], 1 / s["under"]["price"]
                         calib.append((pred.markets["ou_2.5_over"], io / (io + iu), y_over))
                         break
+                lk = likely_choice(pred.markets, prices, cfg)
+                if lk:
+                    st = grade(lk["market"], lk["line"], lk["selection"], int(r.hg), int(r.ag))
+                    likely.append({**lk, "status": st, "country": lg_by[r.div]["country"],
+                                   "level_profit": {"won": lk["effective_odds"] - 1, "lost": -1.0, "void": 0.0}[st]})
                 cands = evaluate(pred, prices, cfg)
                 chosen, reason = decide(cands)
                 counts[f"reason_{reason}"] += 1
@@ -147,6 +182,37 @@ def run_backtest(cfg: dict, leagues: list[dict], now) -> dict:
             seen.add(wk)
             thin.append(s)
     min_n = cfg["min_sample_for_breakdown"]
+
+    def lsum(rs):
+        rs = [x for x in rs if x["status"] in ("won", "lost")]
+        if not rs:
+            return {"n": 0}
+        n = len(rs)
+        wins = sum(x["status"] == "won" for x in rs)
+        return {"n": n, "wins": wins, "hit_rate": wins / n, "roi_level": sum(x["level_profit"] for x in rs) / n,
+                "avg_odds": sum(x["price"] for x in rs) / n,
+                "expected_hit_rate_bookmaker": sum(x["p_fair"] for x in rs) / n,
+                "expected_hit_rate_model": sum(x["p_model"] for x in rs) / n}
+
+    def lbuckets(keyf, order=None):
+        g = defaultdict(list)
+        for x in likely:
+            g[keyf(x)].append(x)
+        out_ = []
+        for k in (order and [o for o in order if o in g]) or sorted(g):
+            s_ = lsum(g[k])
+            out_.append({"key": k, "n": s_["n"], "hidden": True} if s_["n"] < min_n else {"key": k, "hidden": False, **s_})
+        return out_
+
+    def agree_bucket(x):
+        for lo in (0.8, 0.7, 0.6, 0.5):
+            if x["score"] >= lo:
+                return f"{int(lo*100)}%+" if lo == 0.8 else f"{int(lo*100)}-{int(lo*100)+10}%"
+        return "under 50%"
+
+    likely_out = {"overall": lsum(likely),
+                  "by_agreement": lbuckets(agree_bucket, ["80%+", "70-80%", "60-70%", "50-60%", "under 50%"]),
+                  "by_market": lbuckets(lambda x: "Goals (over/under 2.5)" if x["market"] == "ou" else "Match result (1X2)")}
     out = _round({
         "generated_at": iso(now), "period": {"from": str(start.date()), "to": str(end.date())},
         "model_version": m["version"],
@@ -159,7 +225,7 @@ def run_backtest(cfg: dict, leagues: list[dict], now) -> dict:
                        "selection": by(lambda r: r["label"], min_n),
                        "edge": by(edge_bucket, min_n),
                        "confidence": by(lambda r: r["confidence"], min_n)},
-        "calibration_ou25": cal, "series": thin,
+        "calibration_ou25": cal, "series": thin, "likely": likely_out, "version": VERSION,
     })
     store.write_json(store.BACKTEST, out)
     log_job("backtest", now, "ok", {"picks": len(recs), "fixtures": counts["fixtures"]})

@@ -2,7 +2,7 @@
    isn't derivable from them. Every probability is shown next to the price it was compared with. */
 "use strict";
 
-const S = { data: null, bt: null, expanded: new Set(), filters: { league: "", country: "", date: "", minEdge: "", market: "", oddsMin: "", oddsMax: "" }, picksShown: 100 };
+const S = { data: null, bt: null, expanded: new Set(), likely: { minOdds: null, minAgree: "", market: "", shown: 40 }, filters: { league: "", country: "", date: "", minEdge: "", market: "", oddsMin: "", oddsMax: "" }, picksShown: 100 };
 const SLIP_KEY = "goalseeker.slip.v1";
 
 // ---------------------------------------------------------------- helpers
@@ -101,7 +101,7 @@ function renderChrome(route) {
   const tabs = document.getElementById("tabs");
   tabs.replaceChildren();
   const todayCount = todayPicks().length;
-  const items = [["today", "Today", todayCount], ["week", "Next 7 days"], ["slip", "My slip", SLIP.length || null], ["record", "Record"], ["config", "Settings"]];
+  const items = [["today", "Today", todayCount], ["likely", "Most likely"], ["week", "Next 7 days"], ["slip", "My slip", SLIP.length || null], ["record", "Record"], ["config", "Settings"]];
   for (const [id, label, count] of items) {
     tabs.append(h("a", { href: `#${id}`, "aria-current": route === id ? "page" : null }, label, count ? h("span", { class: "count" }, count) : null));
   }
@@ -120,7 +120,7 @@ function renderChrome(route) {
   const banners = document.getElementById("banners");
   banners.replaceChildren();
   if (S.data.preview_note) banners.append(h("div", { class: "banner" }, h("span", { class: "ico" }, "i"), h("div", null, h("strong", null, "Preview. "), S.data.preview_note)));
-  if (route === "today" || route === "week") {
+  if (route === "today" || route === "week" || route === "likely") {
     const b = backtestBanner();
     if (b) banners.append(b);
   }
@@ -299,6 +299,92 @@ function viewToday() {
         examined ? `${examined} fixtures were examined and none cleared every rule. That's normal: most prices are fair. See why for each one in `
           : "There are no fixtures with published prices in this window yet. Prices are published on Tuesday and Friday afternoons (UK). ",
         examined ? h("a", { href: "#week" }, "Next 7 days") : null, examined ? "." : null),
+  ];
+}
+
+
+// ---------------------------------------------------------------- Most likely
+// The result both the model AND the bookmaker rate most likely in each match. Not value bets:
+// ranked by likelihood, shown with the price, and with its own backtest record above the list.
+function likelyChoice(entry) {
+  const m = entry.model;
+  if (!m) return null;
+  const c = cfg();
+  const minOdds = S.likely.minOdds ?? c.min_odds;
+  let best = null;
+  for (const pr of entry.prices) {
+    if (!c.bettable_bookmakers.includes(pr.bookmaker) || !["ou", "1x2"].includes(pr.market)) continue;
+    if (pr.market === "ou" && !(pr.line != null && (pr.line * 2) % 2 === 1)) continue;
+    const inv = Object.fromEntries(Object.entries(pr.prices).map(([sel, v]) => [sel, 1 / v]));
+    const sum = Object.values(inv).reduce((a, b) => a + b, 0);
+    for (const [sel, price] of Object.entries(pr.prices)) {
+      const key = pr.market === "ou" ? `ou_${pr.line}_${sel}` : `1x2_${sel}`;
+      const mk = m.markets[key];
+      if (!mk) continue;
+      const eo = pr.bookmaker === "BFE" ? 1 + (price - 1) * (1 - c.betfair_commission) : price;
+      if (eo < minOdds) continue;
+      const fair = inv[sel] / sum;
+      const score = Math.min(mk.p, fair);
+      if (!best || score > best.score) best = { key, market: pr.market, bk: pr.bookmaker, price, eo, p: mk.p, fair, score, at: pr.fetched_at };
+    }
+  }
+  return best;
+}
+function viewLikely() {
+  const c = cfg(), L = S.likely, ref = nowRef();
+  const rows = [];
+  for (const e of S.data.board.fixtures) {
+    if (t(e.fixture.kickoff_utc) < ref) continue;
+    const ch = likelyChoice(e);
+    if (!ch) continue;
+    if (L.minAgree !== "" && ch.score * 100 < parseFloat(L.minAgree)) continue;
+    if (L.market && ch.market !== L.market) continue;
+    rows.push({ e, ch });
+  }
+  rows.sort((a, b) => b.ch.score - a.ch.score);
+  const lk = S.bt && S.bt.likely;
+  const o = lk && lk.overall;
+  const set = (k, num) => (ev) => { L[k] = ev.target.value === "" ? (num ? null : "") : (num ? parseFloat(ev.target.value) : ev.target.value); L.shown = 40; route(); };
+  const bucketTable = (title, rs) => h("div", { class: "tablewrap" }, h("h4", { style: "margin:14px 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted)" }, title),
+    h("table", null, h("thead", null, h("tr", null, h("th", null, ""), h("th", { class: "n" }, "Bets"), h("th", { class: "n" }, "Won"), h("th", { class: "n" }, "Bookmaker expected"), h("th", { class: "n" }, "Avg price"), h("th", { class: "n" }, "Return per bet"))),
+      h("tbody", null, rs.map((r) => r.hidden ? h("tr", { class: "dim" }, h("td", null, r.key), h("td", { class: "n" }, r.n), h("td", { colspan: "4" }, "too few to show"))
+        : h("tr", null, h("td", null, r.key), h("td", { class: "n" }, intl(r.n)), h("td", { class: "n" }, pct(r.hit_rate)), h("td", { class: "n" }, pct(r.expected_hit_rate_bookmaker)),
+          h("td", { class: "n" }, odds(r.avg_odds)), h("td", { class: "n " + sign(r.roi_level) }, sgnPct(r.roi_level)))))));
+  return [
+    h("div", { class: "view-head" }, h("h2", null, "Most likely"), h("span", { class: "muted small" }, `Times in ${tz}`)),
+    h("p", { class: "lede" }, `For each match: the bet that both the model and the bookmaker rate most likely, with odds of at least ${odds(S.likely.minOdds ?? c.min_odds)}, ranked from most to least likely. `,
+      h("strong", null, "These are the likeliest results, not value bets."), " A likely result at a short price still loses the bookmaker's margin over time, which is why the Today tab ranks by edge instead."),
+    o && o.n ? h("div", { class: "banner warn", style: "margin:0 0 14px" }, h("span", { class: "ico" }, "!"), h("div", null,
+      h("strong", null, "How this list did in the backtest: "),
+      `betting this choice in each of ${intl(o.n)} past matches won ${pct(o.hit_rate)} of bets (the bookmakers' prices predicted ${pct(o.expected_hit_rate_bookmaker)}) and returned ${sgnPct(o.roi_level)} per bet at an average price of ${odds(o.avg_odds)}. `,
+      "Higher agreement wins more often but pays less: see the table below the list.")) : h("p", { class: "muted small" }, "The backtest for this list appears after the next weekly backtest run."),
+    h("div", { class: "filters", role: "group", "aria-label": "Filters" },
+      h("label", null, "Min odds", h("input", { type: "number", step: "0.05", min: "1.01", value: S.likely.minOdds ?? c.min_odds, onchange: set("minOdds", true) })),
+      h("label", null, "Min agreement (%)", h("input", { type: "number", step: "5", value: L.minAgree, placeholder: "any", onchange: set("minAgree", false) })),
+      h("label", null, "Market", h("select", { onchange: set("market", false) }, h("option", { value: "" }, "Goals and results"),
+        h("option", { value: "ou", selected: L.market === "ou" }, "Goals (over/under 2.5)"), h("option", { value: "1x2", selected: L.market === "1x2" }, "Match result (1X2)"))),
+      h("button", { class: "btn link", onclick: () => { S.likely = { minOdds: null, minAgree: "", market: "", shown: 40 }; route(); } }, "Reset")),
+    rows.length ? h("div", { class: "tablewrap" }, h("table", null,
+      h("thead", null, h("tr", null, h("th", null, "Kickoff"), h("th", null, "Match"), h("th", null, "Most likely"), h("th", { class: "n" }, "Price"),
+        h("th", { class: "n" }, "Model"), h("th", { class: "n" }, "Bookmaker"), h("th", { class: "n" }, "Both agree"), h("th", { class: "n" }, "Only worth it at"), h("th", null, ""))),
+      h("tbody", null, rows.slice(0, L.shown).map(({ e, ch }) => {
+        const fx = e.fixture, id = "lk-" + fx.fixture_id, open = S.expanded.has(id);
+        return [h("tr", null,
+          h("td", null, fmtDay.format(new Date(fx.kickoff_utc)), h("div", { class: "muted small" }, fx.time_known ? fmtTime.format(new Date(fx.kickoff_utc)) : "TBC")),
+          h("td", null, `${fx.home} v ${fx.away}`, h("div", { class: "muted small" }, `${fx.country} · ${fx.league}`)),
+          h("td", null, h("strong", null, marketLabel(ch.key, fx))),
+          h("td", { class: "n" }, odds(ch.price), h("div", { class: "muted small" }, bkName(ch.bk))),
+          h("td", { class: "n" }, pct(ch.p)), h("td", { class: "n" }, pct(ch.fair)), h("td", { class: "n" }, h("strong", null, pct(ch.score))),
+          h("td", { class: "n" }, `${odds(1 / ch.score)}+`),
+          h("td", null, h("button", { class: "btn", "aria-expanded": String(open), onclick: () => toggle(id) }, open ? "Hide" : "Details"))),
+          open ? h("tr", null, h("td", { colspan: "9", style: "padding:0" }, detailPanel(e, null))) : null];
+      })))) : h("div", { class: "empty" }, h("strong", null, "Nothing matches these filters"), "Try a lower minimum agreement or odds."),
+    rows.length > L.shown ? h("button", { class: "btn", style: "margin-top:10px", onclick: () => { L.shown += 40; route(); } }, `Show more (${rows.length - L.shown})`) : null,
+    h("p", { class: "small muted", style: "margin-top:10px" }, "Both agree = the lower of the model's and the bookmaker's probability. ",
+      "Only worth it at = the lowest price at which the bet breaks even if that lower probability is right. If Sportingbet offers less, the bet loses money on average. ",
+      "These are not picks: they are not staked and never count in the Record."),
+    lk ? h("section", { class: "section" }, h("h3", null, "Backtest of this list"),
+      bucketTable("By how strongly model and bookmaker agree", lk.by_agreement), bucketTable("By market", lk.by_market)) : null,
   ];
 }
 
@@ -637,7 +723,7 @@ function viewSettings() {
 
 // ---------------------------------------------------------------- router
 // Plain #name routes (no slashes) so links survive being opened anywhere.
-const VIEWS = { today: viewToday, week: viewWeek, slip: viewSlip, record: viewRecord, config: viewSettings };
+const VIEWS = { today: viewToday, likely: viewLikely, week: viewWeek, slip: viewSlip, record: viewRecord, config: viewSettings };
 function route() {
   const r = (location.hash.match(/^#\/?([\w-]+)/) || [])[1] || "today";
   const name = VIEWS[r] ? r : "today";
@@ -647,7 +733,7 @@ function route() {
   view.replaceChildren(...[VIEWS[name]()].flat(Infinity).filter(Boolean));
   if (route.last === name) window.scrollTo(0, y); else { window.scrollTo(0, 0); }
   route.last = name;
-  document.title = `GoalSeeker · ${{ today: "Today", week: "Next 7 days", slip: "My slip", record: "Record", config: "Settings" }[name]}`;
+  document.title = `GoalSeeker · ${{ today: "Today", likely: "Most likely", week: "Next 7 days", slip: "My slip", record: "Record", config: "Settings" }[name]}`;
 }
 async function boot() {
   try {
