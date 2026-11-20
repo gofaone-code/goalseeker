@@ -7,41 +7,41 @@
     "avg_odds": 1.94415,
     "clv_beat_close_share": 0.45584,
     "clv_n": 1121,
-    "expected_wins": 635.94134,
+    "expected_wins": 635.94174,
     "hidden": false,
     "hit_rate": 0.5058,
-    "kelly_profit_units": -90.89275,
+    "kelly_profit_units": -90.70525,
     "key": "Medium",
     "level_profit_units": -40.8225,
     "longest_losing_streak": 9,
     "losses": 554,
     "max_drawdown_level_units": 59.4145,
     "n": 1121,
-    "roi_kelly": -0.03841,
+    "roi_kelly": -0.03833,
     "roi_level": -0.03642,
-    "staked_units": 2366.25,
+    "staked_units": 2366.5,
     "wins": 567
    },
    {
-    "avg_clv": -0.00538,
+    "avg_clv": -0.0053,
     "avg_edge": 0.05215,
-    "avg_odds": 1.84197,
-    "clv_beat_close_share": 0.38302,
+    "avg_odds": 1.84165,
+    "clv_beat_close_share": 0.38396,
     "clv_n": 1060,
-    "expected_wins": 607.4675,
+    "expected_wins": 607.59748,
     "hidden": false,
-    "hit_rate": 0.51415,
-    "kelly_profit_units": -71.19813,
+    "hit_rate": 0.51509,
+    "kelly_profit_units": -69.57888,
     "key": "Low",
-    "level_profit_units": -78.9035,
+    "level_profit_units": -77.324,
     "longest_losing_streak": 11,
-    "losses": 515,
-    "max_drawdown_level_units": 85.4205,
+    "losses": 514,
+    "max_drawdown_level_units": 83.841,
     "n": 1060,
-    "roi_kelly": -0.0662,
-    "roi_level": -0.07444,
-    "staked_units": 1075.5,
-    "wins": 545
+    "roi_kelly": -0.06465,
+    "roi_level": -0.07295,
+    "staked_units": 1076.25,
+    "wins": 546
    },
    {
     "avg_clv": 0.00912,
@@ -49,43 +49,43 @@
     "avg_odds": 2.091,
     "clv_beat_close_share": 0.47917,
     "clv_n": 528,
-    "expected_wins": 301.65059,
+    "expected_wins": 301.64995,
     "hidden": false,
     "hit_rate": 0.46591,
-    "kelly_profit_units": -66.814,
+    "kelly_profit_units": -67.064,
     "key": "High",
     "level_profit_units": -25.736,
     "longest_losing_streak": 9,
     "losses": 282,
     "max_drawdown_level_units": 35.9385,
     "n": 528,
-    "roi_kelly": -0.04276,
+    "roi_kelly": -0.04291,
     "roi_level": -0.04874,
-    "staked_units": 1562.5,
+    "staked_units": 1562.75,
     "wins": 246
    }
   ],
   "edge": [
    {
-    "avg_clv": 0.00081,
+    "avg_clv": 0.00088,
     "avg_edge": 0.04952,
-    "avg_odds": 1.86306,
-    "clv_beat_close_share": 0.42906,
+    "avg_odds": 1.86277,
+    "clv_beat_close_share": 0.42992,
     "clv_n": 1163,
-    "expected_wins": 659.53734,
+    "expected_wins": 659.66653,
     "hidden": false,
-    "hit_rate": 0.51333,
-    "kelly_profit_units": -64.32188,
+    "hit_rate": 0.51419,
+    "kelly_profit_units": -62.70263,
     "key": "4-6%",
-    "level_profit_units": -71.17,
+    "level_profit_units": -69.5905,
     "longest_losing_streak": 6,
-    "losses": 566,
-    "max_drawdown_level_units": 77.6225,
+    "losses": 565,
+    "max_drawdown_level_units": 76.043,
     "n": 1163,
-    "roi_kelly": -0.05316,
-    "roi_level": -0.0612,
-    "staked_units": 1210.0,
-    "wins": 597
+    "roi_kelly": -0.05179,
+    "roi_level": -0.05984,
+    "staked_units": 1210.75,
+    "wins": 598
    },
    {
     "avg_clv": 0.00242,
@@ -93,19 +93,19 @@
     "avg_odds": 1.91323,
     "clv_beat_close_share": 0.4411,
     "clv_n": 764,
-    "expected_wins": 437.95895,
+    "expected_wins": 437.96052,
     "hidden": false,
     "hit_rate": 0.50916,
-    "kelly_profit_units": -71.85975,
+    "kelly_profit_units": -71.92225,
     "key": "6-8%",
     "level_profit_units": -36.675,
     "longest_losing_streak": 9,
     "losses": 375,
     "max_drawdown_level_units": 51.6725,
     "n": 764,
-    "roi_kelly": -0.04632,
+    "roi_kelly": -0.04635,
     "roi_level": -0.048,
-    "staked_units": 1551.25,
+    "staked_units": 1551.75,
     "wins": 389
    },
    {
@@ -114,7 +114,7 @@
     "avg_odds": 2.01125,
     "clv_beat_close_share": 0.40094,
     "clv_n": 424,
-    "expected_wins": 241.40835,
+    "expected_wins": 241.40818,
     "hidden": false,
     "hit_rate": 0.45519,
     "kelly_profit_units": -116.8155,
@@ -135,7 +135,7 @@
     "avg_odds": 2.10813,
     "clv_beat_close_share": 0.4581,
     "clv_n": 358,
-    "expected_wins": 206.1548,
+    "expected_wins": 206.15394,
     "hidden": false,
     "hit_rate": 0.5,
     "kelly_profit_units": 24.09225,
@@ -153,25 +153,25 @@
   ],
   "league": [
    {
-    "avg_clv": -0.00498,
-    "avg_edge": 0.07064,
-    "avg_odds": 1.92213,
-    "clv_beat_close_share": 0.41608,
-    "clv_n": 286,
-    "expected_wins": 164.50472,
+    "avg_clv": -0.0049,
+    "avg_edge": 0.07053,
+    "avg_odds": 1.92105,
+    "clv_beat_close_share": 0.41812,
+    "clv_n": 287,
+    "expected_wins": 165.16034,
     "hidden": false,
-    "hit_rate": 0.51049,
-    "kelly_profit_units": -44.969,
+    "hit_rate": 0.5122,
+    "kelly_profit_units": -43.91225,
     "key": "England - League One",
-    "level_profit_units": -13.504,
+    "level_profit_units": -12.9245,
     "longest_losing_streak": 8,
     "losses": 140,
-    "max_drawdown_level_units": 27.1005,
-    "n": 286,
-    "roi_kelly": -0.08366,
-    "roi_level": -0.04722,
-    "staked_units": 537.5,
-    "wins": 146
+    "max_drawdown_level_units": 26.521,
+    "n": 287,
+    "roi_kelly": -0.08143,
+    "roi_level": -0.04503,
+    "staked_units": 539.25,
+    "wins": 147
    },
    {
     "avg_clv": 0.00081,
@@ -179,7 +179,7 @@
     "avg_odds": 1.93587,
     "clv_beat_close_share": 0.4417,
     "clv_n": 283,
-    "expected_wins": 160.24632,
+    "expected_wins": 160.24691,
     "hidden": false,
     "hit_rate": 0.5265,
     "kelly_profit_units": 9.299,
@@ -195,24 +195,24 @@
     "wins": 149
    },
    {
-    "avg_clv": -0.00881,
-    "avg_edge": 0.08364,
-    "avg_odds": 1.94609,
-    "clv_beat_close_share": 0.32558,
-    "clv_n": 258,
-    "expected_wins": 149.09039,
+    "avg_clv": -0.0086,
+    "avg_edge": 0.08381,
+    "avg_odds": 1.94607,
+    "clv_beat_close_share": 0.32685,
+    "clv_n": 257,
+    "expected_wins": 148.56402,
     "hidden": false,
-    "hit_rate": 0.47674,
-    "kelly_profit_units": -12.68625,
+    "hit_rate": 0.4786,
+    "kelly_profit_units": -12.18625,
     "key": "England - National League",
-    "level_profit_units": -23.4855,
+    "level_profit_units": -22.4855,
     "longest_losing_streak": 6,
-    "losses": 135,
-    "max_drawdown_level_units": 31.8615,
-    "n": 258,
-    "roi_kelly": -0.02437,
-    "roi_level": -0.09103,
-    "staked_units": 520.5,
+    "losses": 134,
+    "max_drawdown_level_units": 30.8615,
+    "n": 257,
+    "roi_kelly": -0.02344,
+    "roi_level": -0.08749,
+    "staked_units": 520.0,
     "wins": 123
    },
    {
@@ -221,7 +221,7 @@
     "avg_odds": 1.96808,
     "clv_beat_close_share": 0.45662,
     "clv_n": 219,
-    "expected_wins": 122.87189,
+    "expected_wins": 122.87173,
     "hidden": false,
     "hit_rate": 0.44292,
     "kelly_profit_units": -74.05588,
@@ -263,7 +263,7 @@
     "avg_odds": 1.92892,
     "clv_beat_close_share": 0.47692,
     "clv_n": 130,
-    "expected_wins": 73.67958,
+    "expected_wins": 73.67956,
     "hidden": false,
     "hit_rate": 0.46923,
     "kelly_profit_units": -14.75913,
@@ -305,7 +305,7 @@
     "avg_odds": 1.96122,
     "clv_beat_close_share": 0.54783,
     "clv_n": 115,
-    "expected_wins": 65.20909,
+    "expected_wins": 65.20918,
     "hidden": false,
     "hit_rate": 0.57391,
     "kelly_profit_units": 24.20987,
@@ -347,7 +347,7 @@
     "avg_odds": 1.9124,
     "clv_beat_close_share": 0.35,
     "clv_n": 100,
-    "expected_wins": 57.09775,
+    "expected_wins": 57.09771,
     "hidden": false,
     "hit_rate": 0.51,
     "kelly_profit_units": -8.07438,
@@ -431,7 +431,7 @@
     "avg_odds": 1.85369,
     "clv_beat_close_share": 0.39286,
     "clv_n": 84,
-    "expected_wins": 49.29994,
+    "expected_wins": 49.29997,
     "hidden": false,
     "hit_rate": 0.4881,
     "kelly_profit_units": -2.09775,
@@ -536,7 +536,7 @@
     "avg_odds": 1.96377,
     "clv_beat_close_share": 0.41558,
     "clv_n": 77,
-    "expected_wins": 43.08307,
+    "expected_wins": 43.08306,
     "hidden": false,
     "hit_rate": 0.5974,
     "kelly_profit_units": 20.4995,
@@ -617,25 +617,25 @@
   ],
   "selection": [
    {
-    "avg_clv": -0.0031,
+    "avg_clv": -0.00306,
     "avg_edge": 0.073,
-    "avg_odds": 1.96028,
-    "clv_beat_close_share": 0.40063,
+    "avg_odds": 1.96011,
+    "clv_beat_close_share": 0.40116,
     "clv_n": 1897,
-    "expected_wins": 1074.43625,
+    "expected_wins": 1074.56606,
     "hidden": false,
-    "hit_rate": 0.48972,
-    "kelly_profit_units": -214.13563,
+    "hit_rate": 0.49025,
+    "kelly_profit_units": -212.76638,
     "key": "Under 2.5",
-    "level_profit_units": -121.4265,
+    "level_profit_units": -119.847,
     "longest_losing_streak": 8,
-    "losses": 968,
-    "max_drawdown_level_units": 139.45,
+    "losses": 967,
+    "max_drawdown_level_units": 137.8705,
     "n": 1897,
-    "roi_kelly": -0.05853,
-    "roi_level": -0.06401,
-    "staked_units": 3658.5,
-    "wins": 929
+    "roi_kelly": -0.05814,
+    "roi_level": -0.06318,
+    "staked_units": 3659.5,
+    "wins": 930
    },
    {
     "avg_clv": 0.01211,
@@ -643,19 +643,19 @@
     "avg_odds": 1.86856,
     "clv_beat_close_share": 0.50493,
     "clv_n": 812,
-    "expected_wins": 470.62318,
+    "expected_wins": 470.62311,
     "hidden": false,
     "hit_rate": 0.52833,
-    "kelly_profit_units": -14.76925,
+    "kelly_profit_units": -14.58175,
     "key": "Over 2.5",
     "level_profit_units": -24.0355,
     "longest_losing_streak": 10,
     "losses": 383,
     "max_drawdown_level_units": 38.526,
     "n": 812,
-    "roi_kelly": -0.01097,
+    "roi_kelly": -0.01083,
     "roi_level": -0.0296,
-    "staked_units": 1345.75,
+    "staked_units": 1346.0,
     "wins": 429
    }
   ]
@@ -680,26 +680,107 @@
   "reason_pick": 2709,
   "reason_prob_below_floor": 1382
  },
- "generated_at": "2026-11-20T15:56:44Z",
+ "generated_at": "2026-11-20T17:01:10Z",
+ "likely": {
+  "by_agreement": [
+   {
+    "avg_odds": 1.33565,
+    "expected_hit_rate_bookmaker": 0.72443,
+    "expected_hit_rate_model": 0.72468,
+    "hidden": false,
+    "hit_rate": 0.76087,
+    "key": "70-80%",
+    "n": 46,
+    "roi_level": 0.01057,
+    "wins": 35
+   },
+   {
+    "avg_odds": 1.45464,
+    "expected_hit_rate_bookmaker": 0.65517,
+    "expected_hit_rate_model": 0.63818,
+    "hidden": false,
+    "hit_rate": 0.66224,
+    "key": "60-70%",
+    "n": 1205,
+    "roi_level": -0.04519,
+    "wins": 798
+   },
+   {
+    "avg_odds": 1.69858,
+    "expected_hit_rate_bookmaker": 0.56233,
+    "expected_hit_rate_model": 0.5576,
+    "hidden": false,
+    "hit_rate": 0.55631,
+    "key": "50-60%",
+    "n": 6935,
+    "roi_level": -0.06737,
+    "wins": 3858
+   },
+   {
+    "avg_odds": 1.95544,
+    "expected_hit_rate_bookmaker": 0.50534,
+    "expected_hit_rate_model": 0.5042,
+    "hidden": false,
+    "hit_rate": 0.53967,
+    "key": "under 50%",
+    "n": 1336,
+    "roi_level": -0.00272,
+    "wins": 721
+   }
+  ],
+  "by_market": [
+   {
+    "avg_odds": 1.72855,
+    "expected_hit_rate_bookmaker": 0.55901,
+    "expected_hit_rate_model": 0.56049,
+    "hidden": false,
+    "hit_rate": 0.55731,
+    "key": "Goals (over/under 2.5)",
+    "n": 8297,
+    "roi_level": -0.0574,
+    "wins": 4624
+   },
+   {
+    "avg_odds": 1.52215,
+    "expected_hit_rate_bookmaker": 0.62007,
+    "expected_hit_rate_model": 0.5653,
+    "hidden": false,
+    "hit_rate": 0.64327,
+    "key": "Match result (1X2)",
+    "n": 1225,
+    "roi_level": -0.03969,
+    "wins": 788
+   }
+  ],
+  "overall": {
+   "avg_odds": 1.702,
+   "expected_hit_rate_bookmaker": 0.56687,
+   "expected_hit_rate_model": 0.56111,
+   "hit_rate": 0.56837,
+   "n": 9522,
+   "roi_level": -0.05512,
+   "wins": 5412
+  }
+ },
  "model_version": "dc-1.0",
  "overall": {
-  "avg_clv": 0.00146,
+  "avg_clv": 0.00149,
   "avg_edge": 0.07038,
-  "avg_odds": 1.93279,
-  "clv_beat_close_share": 0.43189,
+  "avg_odds": 1.93267,
+  "clv_beat_close_share": 0.43226,
   "clv_n": 2709,
-  "expected_wins": 1545.05943,
-  "hit_rate": 0.50129,
-  "kelly_profit_units": -228.90488,
-  "level_profit_units": -145.462,
+  "expected_wins": 1545.18917,
+  "hit_rate": 0.50166,
+  "kelly_profit_units": -227.34813,
+  "level_profit_units": -143.8825,
   "longest_losing_streak": 8,
-  "losses": 1351,
-  "max_drawdown_level_units": 166.644,
+  "losses": 1350,
+  "max_drawdown_level_units": 165.0645,
   "n": 2709,
-  "roi_kelly": -0.04574,
-  "roi_level": -0.0537,
-  "staked_units": 5004.25,
-  "wins": 1358
+  "roi_kelly": -0.04542,
+  "roi_level": -0.05311,
+  "staked_units": 5005.5,
+  "wins": 1359
  },
  "params": {
   "half_life_days": 365,
@@ -841,136 +922,137 @@
   },
   {
    "date": "2026-02-08",
-   "level": -62.7135
+   "level": -62.134
   },
   {
    "date": "2026-02-15",
-   "level": -61.957
+   "level": -61.3775
   },
   {
    "date": "2026-02-22",
-   "level": -64.509
+   "level": -63.9295
   },
   {
    "date": "2026-03-01",
-   "level": -68.3215
+   "level": -66.742
   },
   {
    "date": "2026-03-08",
-   "level": -76.513
+   "level": -74.9335
   },
   {
    "date": "2026-03-15",
-   "level": -77.9215
+   "level": -76.342
   },
   {
    "date": "2026-03-22",
-   "level": -84.777
+   "level": -83.1975
   },
   {
    "date": "2026-03-29",
-   "level": -83.9735
+   "level": -82.394
   },
   {
    "date": "2026-04-05",
-   "level": -89.141
+   "level": -87.5615
   },
   {
    "date": "2026-04-12",
-   "level": -84.6445
+   "level": -83.065
   },
   {
    "date": "2026-04-19",
-   "level": -100.634
+   "level": -99.0545
   },
   {
    "date": "2026-04-26",
-   "level": -103.894
+   "level": -102.3145
   },
   {
    "date": "2026-05-03",
-   "level": -114.504
+   "level": -112.9245
   },
   {
    "date": "2026-05-10",
-   "level": -110.2135
+   "level": -108.634
   },
   {
    "date": "2026-05-17",
-   "level": -100.3595
+   "level": -98.78
   },
   {
    "date": "2026-05-24",
-   "level": -100.177
+   "level": -98.5975
   },
   {
    "date": "2026-05-31",
-   "level": -101.3325
+   "level": -99.753
   },
   {
    "date": "2026-08-01",
-   "level": -97.6295
+   "level": -96.05
   },
   {
    "date": "2026-08-09",
-   "level": -95.9
+   "level": -94.3205
   },
   {
    "date": "2026-08-16",
-   "level": -96.5665
+   "level": -94.987
   },
   {
    "date": "2026-08-23",
-   "level": -96.8925
+   "level": -95.313
   },
   {
    "date": "2026-08-30",
-   "level": -104.592
+   "level": -103.0125
   },
   {
    "date": "2026-09-06",
-   "level": -115.1595
+   "level": -113.58
   },
   {
    "date": "2026-09-13",
-   "level": -122.2785
+   "level": -120.699
   },
   {
    "date": "2026-09-20",
-   "level": -122.205
+   "level": -120.6255
   },
   {
    "date": "2026-09-27",
-   "level": -122.113
+   "level": -120.5335
   },
   {
    "date": "2026-10-04",
-   "level": -123.895
+   "level": -122.3155
   },
   {
    "date": "2026-10-11",
-   "level": -110.9755
+   "level": -109.396
   },
   {
    "date": "2026-10-18",
-   "level": -123.375
+   "level": -121.7955
   },
   {
    "date": "2026-10-25",
-   "level": -124.7225
+   "level": -123.143
   },
   {
    "date": "2026-11-01",
-   "level": -142.8415
+   "level": -141.262
   },
   {
    "date": "2026-11-08",
-   "level": -151.413
+   "level": -149.8335
   },
   {
    "date": "2026-11-15",
-   "level": -145.462
+   "level": -143.8825
   }
  ],
+ "version": 2,
  "voids": 0
 }
