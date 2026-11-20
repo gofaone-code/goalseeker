@@ -280,7 +280,7 @@ function todayPicks() {
   const out = [];
   for (const p of S.data.picks) {
     const k = t(p.fixture.kickoff_utc);
-    if (k >= ref - 2 * 3600e3 && k <= until) out.push(p);
+    if (k > ref && k <= until) out.push(p);   // only matches that haven't kicked off yet
   }
   return out.sort((a, b) => b.edge - a.edge);
 }
@@ -288,7 +288,7 @@ function viewToday() {
   const picks = todayPicks();
   const ref = nowRef();
   const until = ref + cfg().today_hours * 3600e3;
-  const examined = S.data.board.fixtures.filter((e) => t(e.fixture.kickoff_utc) >= ref - 2 * 3600e3 && t(e.fixture.kickoff_utc) <= until).length;
+  const examined = S.data.board.fixtures.filter((e) => t(e.fixture.kickoff_utc) > ref && t(e.fixture.kickoff_utc) <= until).length;
   return [
     h("div", { class: "view-head" }, h("h2", null, "Today"), h("span", { class: "muted small" }, `Next ${cfg().today_hours} hours · times in ${tz}`)),
     h("p", { class: "lede" }, picks.length
@@ -392,7 +392,9 @@ function viewLikely() {
 function bestCand(e) { return e.candidates && e.candidates.length ? e.candidates[0] : null; }
 function viewWeek() {
   const f = S.filters;
-  const all = S.data.board.fixtures.slice().sort((a, b) => t(a.fixture.kickoff_utc) - t(b.fixture.kickoff_utc));
+  const ref = nowRef();
+  const all = S.data.board.fixtures.filter((e) => t(e.fixture.kickoff_utc) > ref)   // hide games already under way or played
+    .sort((a, b) => t(a.fixture.kickoff_utc) - t(b.fixture.kickoff_utc));
   const leagues = [...new Map(all.map((e) => [e.fixture.div, e.fixture])).values()].sort((a, b) => (a.country + a.league).localeCompare(b.country + b.league));
   const countries = [...new Set(all.map((e) => e.fixture.country))].sort();
   const days = [...new Set(all.map((e) => dayKey(e.fixture.kickoff_utc)))];
@@ -749,5 +751,13 @@ async function boot() {
   index();
   window.addEventListener("hashchange", route);
   route();
+  // Re-draw only when a listed game has kicked off since the last draw, so typing isn't interrupted.
+  let lastCheck = Date.now();
+  setInterval(() => {
+    const now = Date.now(), r = route.last;
+    const kicked = S.data.board.fixtures.some((e) => { const k = t(e.fixture.kickoff_utc); return k > lastCheck && k <= now; });
+    lastCheck = now;
+    if (kicked && (r === "today" || r === "week" || r === "likely")) route();
+  }, 60000);
 }
 boot();
