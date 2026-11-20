@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoalSeeker</title>
+<meta name="description" content="Pre-match over/under value finder built on real fixtures, real prices and a documented model.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10.5' fill='none' stroke='%230d5c3a' stroke-width='2'/%3E%3Cpath d='M12 6.2l3.6 2.6-1.4 4.2H9.8L8.4 8.8z' fill='%230d5c3a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <a class="brand" href="#today" aria-label="GoalSeeker home">
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 6.2l3.6 2.6-1.4 4.2H9.8L8.4 8.8z" fill="currentColor"/></svg>
+      <span class="word">GoalSeeker</span>
+    </a>
+    <nav class="tabs" id="tabs" aria-label="Screens"></nav>
+    <div class="fresh" id="fresh" aria-live="polite"></div>
+  </header>
+  <div id="banners"></div>
+  <main id="view" tabindex="-1"><p class="loading">Loading data...</p></main>
+  <footer class="foot">
+    <p>Fixtures, results and prices: football-data.co.uk. Probabilities: a Dixon-Coles goal model fitted to stored results.
+      No number on this page comes from a language model. Betting involves risk of loss; the Record and Backtest
+      show how this model has actually done.</p>
+  </footer>
+</div>
+<div id="tooltip" class="tooltip" role="status" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
