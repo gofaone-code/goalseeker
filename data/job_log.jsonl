@@ -81,3 +81,8 @@
 {"at": "2026-11-27T00:39:50Z", "counts": {"already_settled": 85, "awaiting_result": 1, "settled_lost": 0, "settled_void": 0, "settled_won": 0}, "job": "settle_results", "message": null, "status": "ok"}
 {"at": "2026-11-27T00:39:50Z", "counts": {"fit_errors": 0, "fits_computed": 0, "fits_reused": 0, "fixtures_processed": 0, "picks_created": 0}, "job": "generate_picks", "message": null, "status": "ok"}
 {"at": "2026-11-27T00:39:50Z", "counts": {"fixtures": 10326, "picks": 2798}, "job": "backtest", "message": null, "status": "ok"}
+{"at": "2026-11-27T13:58:15Z", "counts": {"cached_final": 88, "downloaded": 0, "errors": 0, "not_published": 0, "rows": 2680, "unchanged": 22}, "job": "sync_history", "message": null, "status": "ok"}
+{"at": "2026-11-27T13:58:15Z", "counts": {"fixtures_created": 174, "fixtures_unchanged": 0, "fixtures_updated": 0, "fixtures_without_prices": 0, "inactive_league": 0, "odds_rows_added": 6084, "odds_rows_unchanged": 0, "outside_window": 1}, "job": "sync_fixtures_odds", "message": null, "status": "ok"}
+{"at": "2026-11-27T13:58:15Z", "counts": {"already_final": 230, "awaiting_result": 3, "finished": 0, "voided": 0}, "job": "update_results", "message": null, "status": "ok"}
+{"at": "2026-11-27T13:58:15Z", "counts": {"already_settled": 85, "awaiting_result": 1, "settled_lost": 0, "settled_void": 0, "settled_won": 0}, "job": "settle_results", "message": null, "status": "ok"}
+{"at": "2026-11-27T13:58:15Z", "counts": {"fit_errors": 0, "fits_computed": 10, "fits_reused": 1, "fixtures_processed": 174, "picks_created": 52, "reason_edge_too_large": 2, "reason_no_edge": 67, "reason_pick": 52, "reason_prob_below_floor": 53}, "job": "generate_picks", "message": null, "status": "ok"}
